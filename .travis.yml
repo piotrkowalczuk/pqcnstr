@@ -12,5 +12,5 @@ script:
 - go test
 notifications:
   slack:
-    secure: SLACK_SECURE
+    secure: $SLACK_SECURE
 
