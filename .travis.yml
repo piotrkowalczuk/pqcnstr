@@ -1,0 +1,16 @@
+language: go
+addons:
+  postgresql: '9.3'
+go:
+- tip
+install:
+- go get
+before_script:
+- psql -c 'create database travis_ci_test;' -U postgres
+script:
+- go build
+- go test
+notifications:
+  slack:
+    secure: SLACK_SECURE
+
